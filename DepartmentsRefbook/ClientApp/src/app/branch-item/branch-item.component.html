@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-between align-items-center w-100 tree-item">
+  {{ indexNumber }}. {{ branch?.name }}
+  <div class="hstack gap-3 actions px-3">
+    <ng-container *ngIf="availableDepartments.length > 0">
+      <select (change)="selectionChanged($event)" class="form-select form-select-sm" [style.width]="'250px'">
+        <option value="" disabled selected hidden>Переместить в</option>
+        <option *ngFor="let item of availableDepartments" [value]="item.department?.id">
+          {{ item.company?.name }} - {{ item.department?.name }}
+        </option>
+      </select>
+    </ng-container>
+    <button type="button" class="btn btn-danger btn-sm" (click)="delete()">Удалить</button>
+  </div>
+</div>

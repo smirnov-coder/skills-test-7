@@ -1,0 +1,40 @@
+<ul>
+  <li class="list-item level-2">
+    <div class="d-flex justify-content-between align-items-center w-100 tree-item">
+      {{ indexNumber }}. {{ department?.name }}
+      <div class="hstack gap-3 actions px-3">
+        <div class="dropdown">
+          <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" title="Добавить отдел">
+            Добавить
+          </button>
+          <div class="dropdown-menu" [style.width]="'240px'">
+            <form class="px-4 py-3">
+              <div class="mb-3">
+                <label for="Name" class="form-label">Название отдела</label>
+                <input type="text" class="form-control" id="Name" name="Name" [(ngModel)]="branchName">
+              </div>
+              <div class="hstack gap-3">
+                <button type="button" class="btn btn-success btn-sm" (click)="create()">Создать</button>
+                <button type="button" class="btn btn-light btn-sm">Отмена</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <ng-container *ngIf="availableCompanies.length > 0">
+          <select (change)="selectionChanged($event)" class="form-select form-select-sm" [style.width]="'250px'">
+            <option value="" disabled selected hidden>Переместить в</option>
+            <option *ngFor="let company of availableCompanies" [value]="company?.id">{{ company?.name }}</option>
+          </select>
+        </ng-container>
+        <button type="button" class="btn btn-danger btn-sm" (click)="delete()">Удалить</button>
+      </div>
+    </div>
+  </li>
+  <li *ngFor="let branch of department?.branches; let j = index">
+    <ul>
+      <li class="list-item level-3">
+        <branch-item [indexNumber]="j + 1" [branch]="branch"></branch-item>
+      </li>
+    </ul>
+  </li>
+</ul>

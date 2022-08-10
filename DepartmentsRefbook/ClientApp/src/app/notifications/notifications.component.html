@@ -1,0 +1,9 @@
+<div *ngIf="error$ | async as error" class="alert alert-danger alert-dismissible">
+  {{ error }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" (click)="clearError()"></button>
+</div>
+
+<div *ngIf="success$ | async as success" class="alert alert-success alert-dismissible">
+  {{ success }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" (click)="clearSuccess()"></button>
+</div>

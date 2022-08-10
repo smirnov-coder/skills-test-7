@@ -1,0 +1,14 @@
+<ul class="card">
+  <li class="list-item level-1">
+    <company-item [indexNumber]="indexNumber"
+                  [company]="company">
+    </company-item>
+  </li>
+  <li *ngFor="let department of company?.departments; let i = index">
+    <department-item [indexNumber]="i + 1"
+                     [department]="department">
+    </department-item>
+  </li>
+</ul>
+
+

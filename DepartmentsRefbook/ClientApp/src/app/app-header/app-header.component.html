@@ -1,0 +1,11 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+      <a class="navbar-brand" asp-action="Index">Справочник подразделений</a>
+      <div class="hstack gap-2">
+        <import-file></import-file>
+        <a href="/api/companies/export" download class="btn btn-primary" *ngIf="canExport">Экспорт</a>
+      </div>
+    </div>
+  </nav>
+</header>

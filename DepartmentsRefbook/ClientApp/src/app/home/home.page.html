@@ -1,0 +1,14 @@
+<ng-container *ngIf="companies$ | async as companies">
+  <notifications></notifications>
+  <div *ngIf="companies.length === 0" class="d-flex h-100 justify-content-center align-items-center">
+    Нет данных для отображения. Импортируйте данные из XML-файла.
+  </div>
+  <ng-container *ngIf="companies.length > 0">
+    <div class="vstack gap-4 pb-4">
+      <company-tree-view *ngFor="let company of companies; let i = index"
+                         [company]="company"
+                         [indexNumber]="i + 1">
+      </company-tree-view>
+    </div>
+  </ng-container>
+</ng-container>
