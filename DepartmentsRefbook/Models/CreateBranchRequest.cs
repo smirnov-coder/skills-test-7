@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace DepartmentsRefbook.Models
 {
@@ -14,11 +10,13 @@ namespace DepartmentsRefbook.Models
         /// <summary>
         /// Идентификатор департамента
         /// </summary>
+        [Required]
         public int DepartmentId { get; set; }
 
         /// <summary>
         /// Название отдела
         /// </summary>
+        [Required]
         public string? BranchName { get; set; }
     }
 }

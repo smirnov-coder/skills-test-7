@@ -1,102 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CompanyList>
 	-<Company>
-		<Id>1</Id>
-		<Name>Company #1</Name>
+		<Name>Компания 1</Name>
 		-<DepartmentList>
 			-<Department>
-				<Id>1</Id>
-				<Name>Department #1</Name>
+				<Name>Департамент 1</Name>
 				-<BranchList>
 					-<Branch>
-						<Id>1</Id>
-						<Name>Branch #1</Name>
+						<Name>Отдел 1</Name>
 					</Branch>
 					-<Branch>
-						<Id>2</Id>
-						<Name>Branch #2</Name>
+						<Name>Отдел 2</Name>
 					</Branch>
 				</BranchList>
 			</Department>
 			-<Department>
-				<Id>2</Id>
-				<Name>Department #2</Name>
+				<Name>Департамент 2</Name>
 				-<BranchList>
 					-<Branch>
-						<Id>3</Id>
-						<Name>Branch #1</Name>
+						<Name>Отдел 1</Name>
 					</Branch>
 					-<Branch>
-						<Id>4</Id>
-						<Name>Branch #2</Name>
+						<Name>Отдел 2</Name>
 					</Branch>
 				</BranchList>
 			</Department>
 		</DepartmentList>
 	</Company>
 	-<Company>
-		<Id>2</Id>
-		<Name>Company #2</Name>
+		<Name>Компания 2</Name>
 		-<DepartmentList>
 			-<Department>
-				<Id>3</Id>
-				<Name>Department #1</Name>
+				<Name>Департамент 1</Name>
 				-<BranchList>
 					-<Branch>
-						<Id>5</Id>
-						<Name>Branch #1</Name>
+						<Name>Отдел 1</Name>
 					</Branch>
 					-<Branch>
-						<Id>6</Id>
-						<Name>Branch #2</Name>
+						<Name>Отдел 2</Name>
 					</Branch>
 				</BranchList>
 			</Department>
 			-<Department>
-				<Id>4</Id>
-				<Name>Department #2</Name>
+				<Name>Департамент 2</Name>
 				-<BranchList>
 					-<Branch>
-						<Id>7</Id>
-						<Name>Branch #1</Name>
+						<Name>Отдел 1</Name>
 					</Branch>
 					-<Branch>
-						<Id>8</Id>
-						<Name>Branch #2</Name>
+						<Name>Отдел 2</Name>
 					</Branch>
 				</BranchList>
 			</Department>
 		</DepartmentList>
 	</Company>
 	-<Company>
-		<Id>3</Id>
-		<Name>Company #3</Name>
+		<Name>Компания 3</Name>
 		-<DepartmentList>
 			-<Department>
-				<Id>5</Id>
-				<Name>Department #1</Name>
+				<Name>Департамент 1</Name>
 				-<BranchList>
 					-<Branch>
-						<Id>9</Id>
-						<Name>Branch #1</Name>
+						<Name>Отдел 1</Name>
 					</Branch>
 					-<Branch>
-						<Id>10</Id>
-						<Name>Branch #2</Name>
+						<Name>Отдел 2</Name>
 					</Branch>
 				</BranchList>
 			</Department>
 			-<Department>
-				<Id>6</Id>
-				<Name>Department #2</Name>
+				<Name>Департамент 2</Name>
 				-<BranchList>
 					-<Branch>
-						<Id>11</Id>
-						<Name>Branch #1</Name>
+						<Name>Отдел 1</Name>
 					</Branch>
 					-<Branch>
-						<Id>12</Id>
-						<Name>Branch #2</Name>
+						<Name>Отдел 2</Name>
 					</Branch>
 				</BranchList>
 			</Department>
