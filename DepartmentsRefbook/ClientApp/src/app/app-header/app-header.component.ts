@@ -9,8 +9,8 @@ import { getCompanies } from "../store/refbook/refbook.selectors";
 })
 export class AppHeaderComponent implements OnInit, OnDestroy {
 
+  private subscribed: boolean = true;
   canExport: boolean = false;
-  subscribed: boolean = true;
 
   constructor(private store: Store) {
   }

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnDestroy, OnInit } from "@angular/core";
 import { select, Store } from "@ngrx/store";
+import { takeWhile } from "rxjs";
 import { Branch, Company, Department, MoveBranchRequest } from "../models";
 import { deleteBranch, moveBranch } from "../store/refbook/refbook.actions";
 import { getCompanies } from "../store/refbook/refbook.selectors";
@@ -14,8 +15,9 @@ interface CompanyDepartment {
   templateUrl: "branch-item.component.html",
   host: { "class": "w-100" }
 })
-export class BranchItemComponent implements OnInit {
+export class BranchItemComponent implements OnInit, OnDestroy {
 
+  private subscribed: boolean = true;
   @Input() indexNumber: number = 1;
   @Input() branch?: Branch;
   availableDepartments: CompanyDepartment[] = [];
@@ -25,7 +27,7 @@ export class BranchItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.store
-      .pipe(select(getCompanies))
+      .pipe(select(getCompanies), takeWhile(() => this.subscribed))
       .subscribe(companies => {
         // Формируем список допустимых департаментов, в которые можно переместить отдел
         var result: CompanyDepartment[] = [];
@@ -55,4 +57,7 @@ export class BranchItemComponent implements OnInit {
     }
   }
 
+  ngOnDestroy(): void {
+    this.subscribed = false;
+  }
 }
