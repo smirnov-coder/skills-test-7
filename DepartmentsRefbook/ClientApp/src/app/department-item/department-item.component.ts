@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnDestroy, OnInit } from "@angular/core";
 import { select, Store } from "@ngrx/store";
+import { takeWhile } from "rxjs";
 import { Company, CreateBranchRequest, Department, MoveDepartmentRequest } from "../models";
 import { createBranch, deleteDepartment, moveDepartment } from "../store/refbook/refbook.actions";
 import { getCompanies } from "../store/refbook/refbook.selectors";
@@ -8,8 +9,9 @@ import { getCompanies } from "../store/refbook/refbook.selectors";
   selector: "department-item",
   templateUrl: "department-item.component.html",
 })
-export class DepartmentItemComponent implements OnInit {
+export class DepartmentItemComponent implements OnInit, OnDestroy {
 
+  private subscribed: boolean = true;
   branchName?: string;
   @Input() indexNumber: number = 1;
   @Input() department?: Department;
@@ -20,11 +22,15 @@ export class DepartmentItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.store
-      .pipe(select(getCompanies))
+      .pipe(select(getCompanies), takeWhile(() => this.subscribed))
       .subscribe(companies => {
         // Формируем список допустимых компаний, в которые можно переместить департамент
         this.availableCompanies = companies.filter(c => !c.departments.some(d => d === this.department));
       });
+  }
+
+  ngOnDestroy(): void {
+    this.subscribed = false;
   }
 
   selectionChanged(event: any) {
